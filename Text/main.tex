@@ -5,6 +5,7 @@
 \usepackage{lmodern}
 \usepackage{mathtext}
 \usepackage{geometry}
+\usepackage{verbatim}
 \sloppy
 \geometry{left=30mm,right=30mm,top=20mm,bottom=20mm}
 \usepackage{setspace}
@@ -14,6 +15,7 @@
 \setlength{\parskip}{0pt}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\graphicspath{{images/}}
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -132,17 +134,15 @@
 потенциал множества двигательных единиц регистрируется поверхностной
 ЭМГ.
 
-Рисунок 1. Изменение потенциала мембраны клетки, а -- иллюстрация
-механизма изменения потенциала мембраны клетки, б -- график изменения
-потенциала
-
-\begin{figure}[htbp]
-\centering
-\placeholderfigure{0.42\textwidth}{0.25\textheight}{Изображение 1а: механизм изменения потенциала мембраны}
-\hfill
-\placeholderfigure{0.42\textwidth}{0.25\textheight}{Изображение 1б: график изменения потенциала}
-\caption{Изменение потенциала мембраны клетки.}
+\begin{figure}[H]
+    \centering
+    \hfill
+    \includegraphics[width=0.42\textwidth]{images/Na_Cl_nasos_axon.png}
+    \includegraphics[width=0.42\textwidth]{images/Action_potential_plot.png}
+    \caption{Изменение потенциала мембраны клетки: а --- иллюстрация механизма; б --- график изменения потенциала.}
+    \label{fig:membrane-potential}
 \end{figure}
+\newpage
 
 Частотно-амплитудные характеристики сигнала представлены в таблице ниже:
 
@@ -169,22 +169,27 @@
 низких частот, и аналого-цифровой преобразователь, блок схема
 представлена на рисунке 2.
 
-\begin{figure}[htbp]
+\begin{comment}
+begin{figure}[htbp]
 \centering
-\placeholderfigure{0.85\textwidth}{0.22\textheight}{Плейсхолдер: схема устройства датчика поверхностной электромиографии с системой предобработки}
+%\placeholderfigure{0.85\textwidth}{0.22\textheight}{Плейсхолдер: схема устройства датчика поверхностной электромиографии с системой предобработки}
 \caption{Схема устройства датчика поверхностной электромиографии с системой предобработки.}
 \end{figure}
+\end{comment}
 
 Для ЭМГ датчиков коэффициент ослабления синфазного сигнала должен
 составлять порядка 60-100 дБ, данной характеристикой определяется выбор
 дифференциального усилителя:
+\newpage
 
 \begin{equation}
-\text{КОСС}\,(\text{дБ}) = 20\log_{10}\left(\frac{V_{\text{вых}}}{V_{\text{сф}}}\right).
+\text{КОСС}\,(\text{дБ}) = 20\log_{10}\left(\frac{V_{\text{вых}}}{V_{\text{сф}}}\right),
 \end{equation}
-
-где V\textsubscript{сф}, -- напряжение синфазного сигнала,
-V\textsubscript{вых} -- выходное напряжение
+где
+\begin{itemize}
+    \item $V_{\text{сф}}$ --- напряжение синфазного сигнала;
+    \item $V_{\text{вых}}$ --- выходное напряжение.
+\end{itemize}
 
 \subsubsection{Биполярные датчики: типы электродов, схемы включения, требования к коэффициенту ослабления синфазного сигнала}
 
@@ -213,7 +218,7 @@ V\textsubscript{вых} -- выходное напряжение
 
 \subsection{Архитектура маскированного автокодировщика и обоснование ее выбора}
 
-\placeholderfigure{0.82\textwidth}{0.25\textheight}{Плейсхолдер: архитектура маскированного автокодировщика}
+%\placeholderfigure{0.82\textwidth}{0.25\textheight}{Плейсхолдер: архитектура маскированного автокодировщика}
 \begin{center}\textit{Замените этот блок схемой архитектуры модели.}\end{center}
 
 \subsection{Стратегии маскирования и разрыв между обучающими и рабочими масками}
@@ -226,7 +231,7 @@ V\textsubscript{вых} -- выходное напряжение
 
 \subsection{Описание набора данных и дизайна эксперимента}
 
-\placeholderfigure{0.82\textwidth}{0.24\textheight}{Плейсхолдер: схема экспериментальной установки и расположения электродов}
+%\placeholderfigure{0.82\textwidth}{0.24\textheight}{Плейсхолдер: схема экспериментальной установки и расположения электродов}
 
 Таблица с описанием наборов + описание эксперимента и оборудования
 
@@ -234,13 +239,13 @@ V\textsubscript{вых} -- выходное напряжение
 
 \subsection{Сравнение стратегий маскирования}
 
-\placeholderfigure{0.82\textwidth}{0.24\textheight}{Плейсхолдер: график сравнения стратегий маскирования}
+%\placeholderfigure{0.82\textwidth}{0.24\textheight}{Плейсхолдер: график сравнения стратегий маскирования}
 
 \subsection{Влияние размера фрагмента на качество восстановления}
 
 \subsection{Сравнение с базовыми методами с GenENet}
 
-\placeholderfigure{0.82\textwidth}{0.24\textheight}{Плейсхолдер: сравнение с базовыми методами и GenENet}
+%\placeholderfigure{0.82\textwidth}{0.24\textheight}{Плейсхолдер: сравнение с базовыми методами и GenENet}
 
 \subsection{Ограничения}
 
