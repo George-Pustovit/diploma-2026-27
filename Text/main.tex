@@ -1,4 +1,6 @@
 \documentclass[14pt,a4paper]{extarticle}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{bib/references.bib}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
@@ -132,7 +134,7 @@
 натриевого открываются и изменения заряда мембраны что приводит к
 изменению потенциала клетки -- потенциалом действия (рис.1б), суммарный
 потенциал множества двигательных единиц регистрируется поверхностной
-ЭМГ.
+ЭМГ \cite{action_potential}.
 
 \begin{figure}[H]
     \centering
@@ -161,25 +163,36 @@
 \end{tabular}
 \end{table}
 
+Электроды должны зафиксировать нейронную активность через слои кожи: эпидермис, дерма и подкожный слой. Система электрод-кожа может моделироваться с помощью RC цепочек представленных на рисунке \ref{fig:skin_resistance}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{images/skin_resistance.png}
+\caption{Моделирование импеданса раздела электрод-кожа}
+\label{fig:skin_resistance}
+\end{figure}
+
+
 \subsection{Аппаратные средства поверхностной электромиографии}
 
 Датчик поверхностей электромиографии состоит из следующих блоков:
 контактной площадки, включающие в себя регистрирующие и опорные
 электроды, дифференциальный усилитель, операционный усилитель, фильтр
 низких частот, и аналого-цифровой преобразователь, блок схема
-представлена на рисунке 2.
+представлена на рисунке \ref{fig:EMG_schema}.
 
-\begin{comment}
-begin{figure}[htbp]
+
+\begin{figure}[H]
 \centering
-%\placeholderfigure{0.85\textwidth}{0.22\textheight}{Плейсхолдер: схема устройства датчика поверхностной электромиографии с системой предобработки}
+\includegraphics[width=1\textwidth]{images/EMG_schema.png}
 \caption{Схема устройства датчика поверхностной электромиографии с системой предобработки.}
+\label{fig:EMG_schema}
 \end{figure}
-\end{comment}
+
 
 Для ЭМГ датчиков коэффициент ослабления синфазного сигнала должен
-составлять порядка 60-100 дБ, данной характеристикой определяется выбор
-дифференциального усилителя:
+составлять порядка 90-110 дБ \cite{CMRR}, данной характеристикой определяется выбор
+дифференциального усилителя :
 \newpage
 
 \begin{equation}
@@ -192,6 +205,8 @@ begin{figure}[htbp]
 \end{itemize}
 
 \subsubsection{Биполярные датчики: типы электродов, схемы включения, требования к коэффициенту ослабления синфазного сигнала}
+
+Биполярные датчики представляют собой структру, упомянутой на рисунке \ref{fig:EMG_schema}.
 
 \subsubsection{Гибкие электродные системы}
 
@@ -250,5 +265,7 @@ begin{figure}[htbp]
 \subsection{Ограничения}
 
 Выводы
+
+\printbibliography
 
 \end{document}
